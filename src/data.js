@@ -1,3 +1,5 @@
+import { examCases, examQuestions } from './exam-prep.js';
+
 export const categories = {
   ethics: { label: 'Etiske teorier', short: 'Etikk', color: 'sage' },
   responsibility: { label: 'Bedriftens ansvar', short: 'Samfunnsansvar', color: 'peach' },
@@ -70,6 +72,7 @@ export const concepts = [
 ];
 
 export const questions = [
+  ...examQuestions,
   { concept: 'shareholder', skill: 'argumentation', prompt: 'Hvilken sammenligning av Friedman og Freeman er mest presis i en drøfting?', options: ['Friedman tillater alle midler, mens Freeman forbyr profitt', 'Begge vurderer bare eiernes interesser', 'Friedman vektlegger eiernes avkastning innenfor spillereglene; Freeman gir også andre interessenter selvstendig betydning', 'Friedman utviklet stakeholder-teorien, mens Freeman utviklet shareholder-teorien'], correct: 2, explanation: 'Presenter begge perspektivene rettferdig før du vurderer dem. Skillet gjelder hvem virksomheten har ansvar overfor, ikke et valg mellom profitt uten grenser og ingen profitt.' },
   { concept: 'stakeholder', skill: 'argumentation', prompt: 'En elev skriver: «Ansvar lønner seg fordi misfornøyde kunder alltid kan bytte leverandør.» Hva er det sterkeste motargumentet?', options: ['Kundene har alltid like mye makt som bedriften', 'Kunder uten reelle alternativer kan bli værende selv om praksisen skader dem', 'Hvis ingen bytter, er praksisen nødvendigvis etisk', 'Freeman mener at kundene er de eneste interessentene'], correct: 1, explanation: 'Motargumentet prøver en konkret forutsetning: Har kundene reelle alternativer? Manglende kundetap beviser verken at praksisen er ansvarlig eller at kundenes krav kan ignoreres.' },
   { concept: 'plikt', skill: 'argumentation', prompt: 'En bedrift kan tjene på å skjule viktig informasjon for kundene. Hvilken setning anvender pliktetikk konkret?', options: ['Kant er en viktig filosof, så bedriften bør være snill', 'Bedriften bør bare beregne sannsynligheten for dårlig omtale', 'Alle teorier gir samme svar fordi profitt er galt', 'Prøv maksimen om å villede for gevinst som allmenn lov, og vurder om kundene brukes bare som midler'], correct: 3, explanation: 'Anvendelse krever at et bestemt handlingsprinsipp prøves mot teoriens kriterier. Å nevne Kant eller bare vurdere omdømmet er ikke nok.' },
@@ -97,6 +100,7 @@ export const questions = [
 ];
 
 export const dilemmas = [
+  ...examCases,
   { id: 'exam-responsibility', title: 'Ansvar – også når det koster?', label: 'Eksamensøving · sammenhengende drøfting', icon: 'book', time: '30–40 min', concepts: ['shareholder', 'stakeholder', 'csr', 'plikt', 'krematistikk'],
     story: 'Fiktivt eksempel: En leverandør av en nødvendig tjeneste har få konkurrenter. Ledelsen vurderer å kutte kundestøtten og gjøre prisvilkårene vanskeligere å forstå. Dette kan øke overskuddet, men ramme kunder med lite tid og svake digitale ferdigheter. Noen kunder kan ha vansker med å bytte leverandør. Ledelsen hevder at ansvarlige tiltak bare bør gjennomføres når de lønner seg. Det er ikke avklart om de foreslåtte vilkårene er lovlige.',
     question: 'Drøft om bedriftens samfunnsansvar kan begrunnes bare med langsiktig lønnsomhet. Sammenlign Friedman og Freeman, bruk CSR og minst ett etisk perspektiv, og begrunn din egen konklusjon med eksemplet. Øvingsoppgaven er laget for appen, ikke hentet fra den opprinnelige eksamenen.',

@@ -46,10 +46,10 @@ export function renderExamCoach() {
   </details>`;
 }
 
-export function renderWritingReview(checks = []) {
+export function renderWritingReview(checks = [], criteria = writingCriteria) {
   return `<fieldset class="writing-review">
     <legend>Sjekk begrunnelsene dine</legend>
     <p>Egenvurdering, ikke automatisk sensur. Kryss bare av hvis du kan peke på et sted i teksten som viser dette. Endrer du utkastet, nullstilles avkrysningene slik at du vurderer det på nytt.</p>
-    ${writingCriteria.map((criterion, index) => `<label><input type="checkbox" data-writing-review="${index}" ${checks[index] ? 'checked' : ''}/><span><strong>${criterion.title}</strong><small>${criterion.hint}</small></span></label>`).join('')}
+    ${criteria.map((criterion, index) => `<label><input type="checkbox" data-writing-review="${index}" ${checks[index] ? 'checked' : ''}/><span><strong>${criterion.title}</strong><small>${criterion.hint}</small></span></label>`).join('')}
   </fieldset>`;
 }
