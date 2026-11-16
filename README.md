@@ -12,6 +12,7 @@ En norsk øvingsapp basert på [Etikk begreper.md](Etikk%20begreper.md), med all
 - **Begrepsoversikt:** søkbare forklaringer til alle 12 begrepene, gjennomgåtte eksempler, styrker og begrensninger, formuleringseksempler og forståelsesspørsmål.
 - **Faglige figurer:** klikkbar CSR-pyramide med forklaring av hvert ansvarsområde, sammenligning av etiske perspektiver, interessentkart, eksternaliteter, felles verdier, bærekraft, middelvei og rikdommens formål. Figurene tilpasses tilgjengelig bredde og mørk modus.
 - **Fremgang:** kortvurderinger, quizhistorikk og gjennomgåtte dilemmaer.
+- **Huskeark fra det nye eksamensarket:** 24 søkbare repetisjonskort fordelt på de tre oppgavetypene. Hvert kort har huskeregel, forklaring, fiktivt eksempel, faglig presisering og sidehenvisning. Selvtesten skjuler svaret til du har prøvd selv, lagrer egenvurderingen og lar deg repetere usikre kort. Femdagersplanen har 15 lagrede sjekkpunkter og snarveier til relevant teori og skriveøving. Se [kildekart og avgrensninger](docs/exam-sheet.md).
 - **Mørk modus:** bytt med knappen i topplinjen. Følger systemtemaet til du velger selv, og husker deretter valget på enheten.
 
 ## Kjør lokalt

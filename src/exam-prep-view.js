@@ -3,7 +3,7 @@ import { examCases, examSource } from './exam-prep.js';
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 export function renderExamBanner() {
-  return `<section class="exam-banner" aria-label="Nye eksamensoppgaver"><div><p class="eyebrow">FRA OPPSUMMERINGEN 13. NOVEMBER</p><h2>Øv på de tre eksamensalternativene.</h2><p>Alex og Emma, sårbare bankkunder eller anstendig arbeid. Velg en oppgave og bygg en begrunnet drøfting.</p></div><a class="button primary" href="#exams" data-nav="exams">Gå til eksamensøving →</a></section>`;
+  return `<section class="exam-banner" aria-label="Repetisjon og eksamensøving"><div><p class="eyebrow">NYTT · FRA EKSAMENSARKET</p><h2>Fra huskeregel til et svar med egne ord.</h2><p>24 repetisjonskort, selvtest og en femdagersplan. Bruk det du husker på de tre eksamensalternativene.</p></div><div class="setup-actions"><a class="button primary" href="#revision" data-nav="revision">Åpne huskearket →</a><a class="button secondary" href="#exams" data-nav="exams">Øv på oppgavene</a></div></section>`;
 }
 
 export function renderExamOverview(state) {

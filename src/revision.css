@@ -1,0 +1,77 @@
+.revision-intro, .revision-card, .recall-card, .revision-day {
+  min-width: 0;
+  border: 1px solid var(--lesson-outline);
+  border-radius: 12px;
+  background: var(--lesson-surface);
+  color: var(--lesson-text);
+  overflow-wrap: anywhere;
+}
+.revision-intro { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 28px; background: var(--lesson-panel); }
+.revision-intro h2 { margin: 10px 0; font-size: 30px; }
+.revision-intro p:not(.eyebrow), .revision-plan-intro p { max-width: 620px; font-size: 14px; line-height: 1.8; }
+.revision-total { flex-shrink: 0; text-align: right; }
+.revision-total strong { display: block; font-size: 36px; color: var(--lesson-accent); }
+.revision-total strong span { font-size: 20px; font-weight: 400; }
+.revision-total > span { font-size: 12px; color: var(--lesson-muted); }
+.revision-modes { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+.revision-tools { display: flex; align-items: end; flex-wrap: wrap; gap: 18px; margin-bottom: 24px; }
+.revision-tools .search-box { flex: 1; min-width: min(260px, 100%); max-width: none; }
+.revision-tools .search-box input { padding: 4px; }
+.revision-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; align-items: start; }
+.revision-card > summary { list-style: none; cursor: pointer; padding: 24px; }
+.revision-card > summary::-webkit-details-marker { display: none; }
+.revision-card summary h3 { font-size: 21px; margin: 18px 0 8px; line-height: 1.4; }
+.revision-cue { display: block; font-size: 13px; line-height: 1.8; color: var(--lesson-muted); }
+.revision-card-footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; font-size: 12px; color: var(--lesson-accent); }
+.revision-card-footer > span { font-size: 20px; line-height: 1; }
+.revision-card[open] .revision-card-footer > span { transform: rotate(45deg); }
+.revision-card .revision-answer { padding: 0 24px 8px; }
+.revision-answer h3 { margin: 20px 0 8px; font-size: 15px; }
+.revision-answer p { font-size: 14px; line-height: 1.9; }
+.revision-precision { padding: 16px; border-left: 3px solid var(--lesson-accent); background: var(--lesson-panel); margin: 20px 0; border-radius: 0 7px 7px 0; }
+.revision-precision strong { display: block; font-size: 12px; margin-bottom: 6px; }
+.revision-links { padding: 8px 24px 24px; }
+.revision-source { margin-top: 32px; padding: 20px 0; border-top: 1px solid var(--lesson-outline); color: var(--lesson-muted); }
+.revision-source summary { cursor: pointer; font-size: 13px; }
+.revision-source p { font-size: 12px; line-height: 1.9; margin-top: 14px; max-width: 850px; }
+.revision-recall, .recall-card { max-width: 800px; margin: 0 auto; }
+.revision-recall .setup-actions, .recall-card .setup-actions { flex-wrap: wrap; }
+.recall-card { padding: 32px; }
+.recall-card > .eyebrow { margin: 24px 0 12px; }
+.recall-card > h2 { font-size: 26px; line-height: 1.5; margin-bottom: 20px; }
+.recall-card > .muted { font-size: 14px; line-height: 1.8; margin-bottom: 26px; }
+.recall-card .setup-actions { margin-top: 28px; }
+.revision-plan-intro { margin-bottom: 26px; }
+.revision-plan-intro h2 { margin-bottom: 12px; font-size: 26px; }
+#study-plan-progress { margin-top: 14px; font-weight: 650; color: var(--lesson-accent); }
+.revision-days { display: grid; gap: 18px; }
+.revision-day { padding: 26px; }
+.revision-day-heading { display: flex; align-items: start; gap: 22px; margin-bottom: 22px; }
+.revision-day-heading > span { font-size: 36px; color: var(--lesson-accent); }
+.revision-day-heading h2 { margin: 6px 0 10px; font-size: 23px; }
+.revision-day-heading p:not(.eyebrow) { font-size: 13px; color: var(--lesson-muted); line-height: 1.8; }
+.revision-plan-task { display: flex; gap: 20px; justify-content: space-between; align-items: start; padding: 17px 0; border-top: 1px solid var(--lesson-outline); }
+.revision-plan-task label { display: flex; align-items: start; gap: 12px; font-size: 14px; line-height: 1.8; cursor: pointer; }
+.revision-plan-task input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 4px; accent-color: var(--lesson-accent); }
+.revision-plan-task:has(input:checked) label span { color: var(--lesson-muted); text-decoration: line-through; }
+.revision-plan-task .text-button { flex-shrink: 0; font-size: 12px; padding-top: 4px; }
+.revision-exam-link { margin: 0 0 26px; }
+@media (max-width: 1000px) {
+  .revision-grid { grid-template-columns: 1fr; }
+  .revision-plan-task { flex-direction: column; gap: 8px; }
+  .revision-plan-task .text-button { margin-left: 30px; }
+}
+@media (max-width: 600px) {
+  .revision-intro { align-items: start; padding: 22px; gap: 18px; flex-direction: column; }
+  .revision-intro h2 { font-size: 26px; }
+  .revision-total { text-align: left; }
+  .revision-total strong { display: inline; font-size: 28px; margin-right: 10px; }
+  .revision-modes { gap: 6px; }
+  .revision-modes .button { padding: 12px; font-size: 12px; flex: 1; white-space: normal; }
+  .revision-tools { align-items: stretch; flex-direction: column; }
+  .revision-tools select { width: 100%; }
+  .revision-card > summary, .revision-day, .recall-card { padding: 20px; }
+  .revision-card .revision-answer { padding: 0 20px 8px; }
+  .recall-card > h2 { font-size: 23px; }
+  .revision-day-heading { gap: 16px; }
+}

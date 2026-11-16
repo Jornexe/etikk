@@ -1,5 +1,5 @@
 export const STORAGE_KEY = 'etikk-practice-v1';
-export const freshState = () => ({ ratings: {}, activity: {}, quizzes: [], drafts: {}, reviews: {}, completedDilemmas: [] });
+export const freshState = () => ({ ratings: {}, activity: {}, quizzes: [], drafts: {}, reviews: {}, completedDilemmas: [], recallRatings: {}, studyPlan: {} });
 export function dateKey(date = new Date()) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
@@ -10,6 +10,8 @@ export function loadState(storage) {
     const object = value => value && typeof value === 'object' && !Array.isArray(value) ? value : {};
     return {
       ratings: Object.fromEntries(Object.entries(object(raw.ratings)).filter(([, v]) => v === 'known' || v === 'again')),
+      recallRatings: Object.fromEntries(Object.entries(object(raw.recallRatings)).filter(([, v]) => v === 'known' || v === 'again')),
+      studyPlan: Object.fromEntries(Object.entries(object(raw.studyPlan)).filter(([, v]) => typeof v === 'boolean')),
       activity: Object.fromEntries(Object.entries(object(raw.activity)).filter(([k, v]) => /^\d{4}-\d{2}-\d{2}$/.test(k) && Number.isFinite(v) && v > 0)),
       quizzes: Array.isArray(raw.quizzes) ? raw.quizzes.filter(q => q && Number.isInteger(q.score) && Number.isInteger(q.total) && q.total > 0 && q.score >= 0 && q.score <= q.total && typeof q.date === 'string' && Number.isFinite(new Date(q.date).getTime())) : [],
       drafts: Object.fromEntries(Object.entries(object(raw.drafts)).filter(([, v]) => Array.isArray(v) && v.length === 5 && v.every(s => typeof s === 'string'))),
