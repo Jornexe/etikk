@@ -40,8 +40,62 @@
 .writing-review input { width: 18px; height: 18px; flex-shrink: 0; margin: 4px 0 0; accent-color: var(--lesson-accent); }
 .writing-review strong { display: block; font-size: 14px; line-height: 1.7; }
 .writing-review small { display: block; font-size: 12px; line-height: 1.8; color: var(--lesson-muted); }
+.exam-banner, .exam-intro, .exam-task, .exam-study-tip, .exam-task-brief {
+  min-width: 0;
+  border: 1px solid var(--lesson-outline);
+  border-radius: 12px;
+  padding: 26px;
+  color: var(--lesson-text);
+  background: var(--lesson-surface);
+  overflow-wrap: anywhere;
+}
+.exam-banner { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 28px; background: var(--lesson-panel); }
+.exam-banner h2 { margin: 8px 0; font-size: 23px; }
+.exam-banner p:not(.eyebrow), .exam-intro > p, .exam-task > p:not(.eyebrow), .exam-study-tip > p, .exam-task-brief li {
+  font-size: 14px;
+  line-height: 1.85;
+}
+.exam-banner .button { flex-shrink: 0; }
+.exam-intro { margin-bottom: 30px; }
+.exam-intro h2 { margin: 8px 0 14px; }
+.exam-workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 24px 0; padding: 20px 20px 20px 40px; background: var(--lesson-panel); border-radius: 8px; }
+.exam-workflow li { padding-left: 4px; font-size: 14px; line-height: 1.7; }
+.exam-workflow span { display: block; font-size: 12px; color: var(--lesson-muted); }
+.exam-source, .exam-intro > .exam-source, .exam-study-tip > .exam-source { font-size: 12px; line-height: 1.8; color: var(--lesson-muted); }
+.exam-case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.exam-task { display: flex; flex-direction: column; align-items: stretch; padding: 23px; }
+.exam-task-number { font-size: 32px; color: var(--lesson-accent); margin-bottom: 20px; }
+.exam-task h2 { margin: 10px 0 12px; font-size: 24px; line-height: 1.35; }
+.exam-task ul { padding-left: 18px; margin: 18px 0; font-size: 12px; line-height: 1.8; }
+.exam-task > .exam-task-status { margin-top: auto; padding: 16px 0 12px; font-size: 12px; color: var(--lesson-accent); }
+.exam-task .button { white-space: normal; text-align: center; }
+.exam-task .text-button { margin-top: 10px; white-space: normal; }
+.exam-study-tip { margin-top: 26px; }
+.exam-study-tip h2 { margin-bottom: 12px; font-size: 22px; }
+.exam-study-tip p + p { margin-top: 12px; }
+.exam-study-tip .button { margin-top: 20px; }
+.exam-task-brief { margin: 20px 0 28px; }
+.exam-task-brief details { margin: 16px 0; }
+.exam-task-brief summary { font-weight: 650; cursor: pointer; }
+.exam-task-brief ul { padding-left: 20px; }
+.exam-task-brief li { margin: 12px 0; }
+.exam-task-brief li strong { display: block; }
+.exam-theory-notes { margin-bottom: 26px; }
+.exam-theory-notes h2 { font-size: 18px; margin-bottom: 12px; }
+.exam-theory-notes .exam-source { margin-bottom: 14px; }
+.exam-theory-notes small { display: block; color: var(--lesson-muted); font-size: 11px; line-height: 1.8; margin: 8px 0 16px; }
+.writing-aside:has(.exam-theory-notes) { position: static; max-height: none; }
+@media (max-width: 1150px) {
+  .exam-case-grid { grid-template-columns: 1fr; }
+  .exam-task h2 { font-size: 25px; }
+  .exam-task-number { margin-bottom: 12px; }
+  .exam-banner { align-items: flex-start; flex-direction: column; }
+}
 @media (max-width: 600px) {
   .exam-coach > summary, .writing-review { padding: 16px; }
   .exam-coach-body { padding: 0 16px 20px; }
   .exam-example { padding: 16px; }
+  .exam-banner, .exam-intro, .exam-task, .exam-study-tip, .exam-task-brief { padding: 20px; }
+  .exam-workflow { grid-template-columns: 1fr; gap: 16px; }
+  .exam-banner .button { width: 100%; white-space: normal; }
 }

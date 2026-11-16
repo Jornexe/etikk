@@ -29,7 +29,7 @@ const input = (selector, value) => {
 const saved = () => JSON.parse(dom.window.localStorage.getItem(STORAGE_KEY));
 
 test('exam practice has a coherent outline and all cases keep five draft fields', () => {
-  assert.equal(dilemmas.length, 4);
+  assert.equal(dilemmas.length, 7);
   assert.equal(new Set(dilemmas.map(dilemma => dilemma.id)).size, dilemmas.length);
   const exam = dilemmas.find(dilemma => dilemma.id === 'exam-responsibility');
   assert.match(exam.story, /Fiktivt eksempel/);
@@ -42,7 +42,7 @@ test('exam practice has a coherent outline and all cases keep five draft fields'
   }
   assert.equal(writingCriteria.length, 6);
   assert.equal(new Set(writingCriteria.map(criterion => criterion.id)).size, 6);
-  assert.equal(questions.length, 24);
+  assert.equal(questions.length, 36);
   assert.equal(questions.filter(question => question.skill === 'argumentation').length, 6);
 });
 
@@ -63,7 +63,7 @@ test('legacy progress survives and malformed self-reviews are rejected', () => {
 });
 
 test('writing coach, case-specific prompts, self-review and edits preserve existing work', () => {
-  assert.match(document.querySelector('main').textContent, /24 spørsmål/);
+  assert.match(document.querySelector('main').textContent, /36 spørsmål/);
   assert.match(document.querySelector('main').textContent, /3 dilemmaer \+ eksamensøving/);
   click('[data-nav="dilemmas"]');
   assert.equal(document.querySelectorAll('.dilemma-card').length, 4);
@@ -135,7 +135,7 @@ test('writing coach, case-specific prompts, self-review and edits preserve exist
   assert.equal(document.querySelector('#quiz-count option:last-child').value, String(questions.length));
   document.querySelector('#quiz-count').value = String(questions.length);
   click('[data-action="start-quiz"]');
-  assert.match(document.querySelector('.session-top').textContent, /av 24/);
+  assert.match(document.querySelector('.session-top').textContent, /av 36/);
 
   click('[data-nav="progress"]');
   click('[data-action="reset-prompt"]');
