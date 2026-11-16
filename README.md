@@ -1,6 +1,6 @@
 <img src="assets/icon.svg" width="64" height="64" alt="">
 
-# Etikk — ditt lille øvingsrom
+# Etikk
 
 En norsk øvingsapp basert på [Etikk begreper.md](Etikk%20begreper.md), med alle 9 hovedbegreper og 3 tilleggsbegreper.
 
